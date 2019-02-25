@@ -1,0 +1,116 @@
+body {
+	padding-top: 70px;
+}
+
+html, body, h1, h2, h3, h4, h5, h6 {
+	font-family: 'Roboto', sans-serif;
+	color: #22313F;
+}
+
+p, div, a {
+	font-family: 'Lato', sans-serif;
+}
+
+.navbar {
+	background-color: #22A7F0;
+	color: #fff;
+}
+
+.navbar-nav>li>a {
+	color: white;
+}
+.navbar-nav>li>a:hover, .navbar-nav>li>a:focus {
+	background-color: inherit;
+	color: #2a2a2a;
+}
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+	background-color: inherit;
+	color: #fff;
+}
+
+.dropdown-menu>li>a:hover {
+	background-color: #22A7F0;
+	
+	color: #fff;
+}
+
+.navbar-brand {
+	color: white;
+}
+
+.btn-main {
+	background-color: #22A7F0;
+}
+
+.btn-main:hover {
+	background-color: black;
+}
+
+.data_info {
+	font-size: 1.4em;
+}
+
+.data_info .focus {
+	color: #22A7F0;
+}
+
+.data_info .positive {
+	color: #26A65B;
+}
+
+.data_info .negative {
+	color: #F22613;
+}
+
+.data_info .results {
+	font-size: .8em;
+}
+
+h1 {
+	font-size: 2.8em;
+    font-weight: 900;
+    color: #22313F;
+}
+
+h1.main_header {
+	font-size: 3.5em;
+    color: #22A7F0;
+    font-weight: 100;
+    font-family: 'Lato', sans-serif;
+
+}
+
+.grades {
+	margin-bottom: 30px;
+}
+
+.grades:last-child {
+	margin-bottom: 0px;
+}
+
+.main {
+	padding-bottom: 30px;
+	border-bottom: 1px solid #cacaca;
+}
+.main:last-child {
+	margin-bottom: 0px;
+	border: 0;
+}
+
+/* ANGULAR LOADING BAR*/
+#loading-bar .bar {
+	background: #fff;
+}
+
+#loading-bar .peg {
+	-moz-box-shadow: #fff 1px 0 6px 1px;
+	-ms-box-shadow: #fff 1px 0 6px 1px;
+	-webkit-box-shadow: #fff 1px 0 6px 1px;
+	box-shadow: #fff 1px 0 6px 1px;
+}
+
+#loading-bar-spinner .spinner-icon {
+	border-top-color:  #fff;
+	border-left-color: #fff;
+}

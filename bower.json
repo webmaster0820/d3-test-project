@@ -1,28 +1,25 @@
 {
-  "name": "dagre-d3",
-  "version": "0.6.3",
-  "main": [
-    "dist/dagre-d3.core.js"
+  "name": "bgca_reporting",
+  "version": "0.0.0",
+  "homepage": "https://github.com/novacourtois/bgca_reporting",
+  "authors": [
+    "nova courtois"
   ],
+  "license": "MIT",
   "ignore": [
-    ".*",
-    "README.md",
-    "CHANGELOG.md",
-    "Makefile",
-    "browser.js",
-    "dist/dagre-d3.js",
-    "dist/dagre-d3.min.js",
-    "index.js",
-    "karma*",
-    "lib/**",
-    "package.json",
-    "src/**",
-    "test/**"
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
   ],
   "dependencies": {
-    "d3": "^4.12.2",
-    "dagre": "^0.8.4",
-    "graphlib": "^2.1.7",
-    "lodash": "^4.17.10"
+    "angular-animate": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "angular": "~1.4.7",
+    "angular-loading-bar": "~0.8.0",
+    "angular-nvd3": "~1.0.2",
+    "nvd3": "~1.8.1",
+    "d3": "~3.5.6"
   }
 }
