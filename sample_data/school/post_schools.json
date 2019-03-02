@@ -1,0 +1,80 @@
+{
+    "title": "Game Tech Post-Survey School Results",
+    "type" :"post-survey",
+    "schools": [{
+        "name": "Burnet",
+        "num_students" : 100,
+        "average" : 3,
+        "grades" : [
+            {
+                "grade": "6th",
+                "num_students": 12,
+                "average" : 3,
+                "overall_results" : {
+                    "0_correct" : 8,
+                    "1_correct" : 1,
+                    "2_correct" : 4,
+                    "3_correct" : 0,
+                    "4_correct" : 0,
+                    "5_correct" : 0,
+                    "6_correct" : 1
+                },
+                "results_per_question" : {
+                    "question_1" : 3,
+                    "question_2" : 0,
+                    "question_3" : 2,
+                    "question_4" : 4,
+                    "question_5" : 0,
+                    "question_6" : 0
+                }
+
+            },
+            {
+                "grade": "7th",
+                "num_students": 15,
+                "average" : 2,
+                "overall_results" : {
+                    "0_correct" : 2,
+                    "1_correct" : 3,
+                    "2_correct" : 5,
+                    "3_correct" : 1,
+                    "4_correct" : 0,
+                    "5_correct" : 0,
+                    "6_correct" : 0
+                },
+                "results_per_question" : {
+                    "question_1" : 4,
+                    "question_2" : 2,
+                    "question_3" : 0,
+                    "question_4" : 1,
+                    "question_5" : 0,
+                    "question_6" : 1
+                }
+
+            },
+            {
+                "grade": "8th",
+                "num_students": 12,
+                "average" : 4,
+                "overall_results" : {
+                    "0_correct" : 3,
+                    "1_correct" : 2,
+                    "2_correct" : 4,
+                    "3_correct" : 0,
+                    "4_correct" : 0,
+                    "5_correct" : 0,
+                    "6_correct" : 0
+                },
+                "results_per_question" : {
+                    "question_1" : 0,
+                    "question_2" : 0,
+                    "question_3" : 0,
+                    "question_4" : 2,
+                    "question_5" : 0,
+                    "question_6" : 0
+                }
+
+            }
+        ]
+    }]
+}
