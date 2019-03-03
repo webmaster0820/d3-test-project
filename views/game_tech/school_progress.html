@@ -1,0 +1,118 @@
+<div class="row">
+    <div class="col-sm-12 text-center">
+        <h1 class="main_header">hello</h1>
+    </div>
+</div>
+<div class="row main" ng-repeat="s in post_schools.schools track by $index" ng-cloak ng-init="school_index = $index">
+  <div class="col-sm-12 text-center" id="{{s.name}}">
+    <h1>{{s.name}}</h1>
+
+    <h2>Overall Data</h2>
+    <div class="data_info">
+
+    	{{s.name}} had <span class="focus">{{ pre_schools.schools[$index]['num_students'] }}</span> students complete the pre-survey and <span class="focus">{{s.num_students}}</span> students complete the post-survey for <span class="focus">Game Tech</span>.</br>
+
+        The school average
+
+        <span ng-init ="avg_school_change = s.average - pre_schools.schools[school_index]['average']">
+
+            <span ng-show="avg_school_change < 0">
+                <span class="focus negative">decreased</span>
+                by <span class="focus"> {{ Math.abs(avg_school_change) }} </span> 
+                from <span class="focus">{{ pre_schools.schools[school_index]['average'] }}</span> to
+            </span>
+
+
+            <span ng-show="avg_change > 0">
+                <span class="focus positive">increased</span>
+                by <span class="focus">{{ Math.abs(avg_school_change) }} </span> 
+                from <span class="focus">{{ pre_schools.schools[school_index]['average'] }}</span> to
+            </span> 
+
+            <span ng-show="avg_school_change == 0"><span class="focus">remained the same</span> at </span>
+            <span class="focus">{{s.average }}</span> <ng-pluralize count="s.average" when="{'1': 'question', 'other': 'questions'}"></ng-pluralize> correct out of 6.
+
+        </span>
+
+    </div>
+
+    <h2>Data Breakdown by Grades</h2>
+    <div ng-repeat="g in s.grades track by $index" class="data_info grades" ng-init="grade_index = $index" >
+    	The <span class="focus">average</span> for <strong><span class="focus">{{g.grade}}</span></strong> grade 
+
+        <span ng-init ="avg_grade_change = g.average - pre_schools.schools[school_index]['grades'][grade_index]['average']">
+
+            <span ng-show="avg_grade_change < 0">
+                <span class="focus negative">decreased</span>
+                by <span class="focus"> {{ Math.abs(avg_grade_change) }} </span> 
+                from <span class="focus">{{pre_schools.schools[school_index]['grades'][grade_index]['average']}}</span> to 
+            </span>
+
+
+            <span ng-show="avg_grade_change > 0">
+                <span class="focus positive">increased</span>
+                by <span class="focus">{{ Math.abs(avg_grade_change) }} </span> 
+                from <span class="focus">{{ pre_schools.schools[school_index]['grades'][grade_index]['average'] }}</span> to
+            </span> 
+
+            <span ng-show="avg_grade_change == 0">
+                <span class="focus">remained the same</span> at </span>
+
+            <span class="focus">{{ g.average }}</span> <ng-pluralize count="s.average" when="{'1': 'question', 'other': 'questions'}"></ng-pluralize>
+
+        </span>
+
+        correct out of 6.
+
+    	<div class="row">
+    		<div class="col-sm-12 col-md-5 col-md-push-1">
+		    	<h3>Overall Results:</h3>
+		    	<div ng-repeat="(k,r) in g.overall_results track by $index" ng-init="result_index = $index"
+                ng-hide="r==0"class="results">
+                    <span ng-init="result_change = r - pre_schools.schools[school_index]['grades'][grade_index]['overall_results'][k]">
+
+
+    		    		<span class="focus">{{ r }}</span> <ng-pluralize count="r" when="{'1': 'student', 'other': 'students'}"></ng-pluralize> 
+                        answered <span class="focus">{{ result_index }}</span> <ng-pluralize count="result_index" when="{'1': 'question', 'other': 'questions'}"></ng-pluralize> 
+                        correctly, 
+
+                        <span ng-if="result_change < 0">
+                            <span class="focus">{{ Math.abs(result_change) }}</span> <span class="focus negative">fewer</span> than previous</span>
+                        </span>
+                        <span ng-if="result_change > 0">
+                            <span class="focus">{{ Math.abs(result_change) }}</span> <span class="focus positive">more</span> than previous</span>
+                        </span>
+                        <span ng-if="result_change == 0">
+                            <span class="focus">same</span> as last time
+                        </span>
+                        .
+                    </span>
+		    	</div>
+		    </div>
+		    <div class="col-sm-12 col-md-5 col-md-push-1 ">
+		    	<h3>Results per Question:</h3>
+		    	<div ng-repeat="(k,r) in g.results_per_question track by $index"  ng-init="result_index = $index"
+                ng-hide="r==0" class="results" >
+                    <span ng-init="result_change = r - pre_schools.schools[school_index]['grades'][grade_index]['results_per_question'][k]">
+                        <span class="focus">{{r}}</span> <ng-pluralize count="r" when="{'1': 'student', 'other': 'students'}"></ng-pluralize> answered question <span class="focus">{{result_index + 1}}</span> correctly,
+
+                        <span ng-if="result_change < 0">
+                            <span class="focus">{{ Math.abs(result_change) }}</span> <span class="focus negative">fewer</span> than previous</span>
+                        </span>
+                        <span ng-if="result_change > 0">
+                            <span class="focus">{{ Math.abs(result_change) }}</span> <span class="focus positive">more</span> than previous</span>
+                        </span>
+                        <span ng-if="result_change == 0">
+                            <span class="focus">same</span> as last time
+                        </span>
+                        .
+                    </span>
+		    	</div>                
+		    </div>
+	    </div>	    
+    </div>
+
+    <!-- <nvd3 options="chart_options" data = "chart_data" ></nvd3> -->
+  </div>
+
+</div>
