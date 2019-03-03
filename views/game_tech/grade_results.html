@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-sm-12 text-center">
+        <h1 class="main_header">{{grades.title}}</h1>
+    </div>
+</div>
+<div class="row main" ng-repeat="g in grades.grades" n-cloak>
+  <div class="col-sm-12 text-center" id="{{g.grade}}">
+    <h1>{{g.grade}} Grade</h1>
+
+    <h2>Overall Data</h2>
+    <div class="data_info">
+
+      There were <span class="focus">{{g.num_students}}</span> students in <span class="focus">{{g.grade}} </span> grade who completed the <span class="focus">Game Tech</span> {{grades.type}}.</br>
+      The <span class="focus">average</span> was <span class="focus">{{g.average }}</span> <ng-pluralize count="g.average" when="{'1': 'question', 'other': 'questions'}"></ng-pluralize> correct out of 6.
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-5 col-md-push-1 data_info">
+        <h3>Overall Results:</h3>
+        <div ng-repeat="r in g.overall_results track by $index" class="results" ng-hide="r==0">
+          <span class="focus">{{r}}</span> <ng-pluralize count="r" when="{'1': 'student', 'other': 'students'}"></ng-pluralize> got <span class="focus">{{$index}}</span> question correct.
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-5 col-md-push-1 data_info" >
+        <h3>Results per Question:</h3>
+        <div ng-repeat="r in g.results_per_question track by $index" class="results" ng-hide="r==0">
+          <span class="focus">{{r}}</span>
+          <ng-pluralize count="r" when="{'1': 'student', 'other': 'students'}"></ng-pluralize>
+           answered question <span class="focus">{{$index + 1}}</span> correctly.
+        </div>
+      </div>
+    </div>
+    <!-- <nvd3 options="chart_options" data = "chart_data" ></nvd3> -->
+  </div>
+
+</div>
